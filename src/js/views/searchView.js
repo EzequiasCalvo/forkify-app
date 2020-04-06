@@ -8,6 +8,7 @@ export const clearInput = () => {
 
 export const clearResults = () => {
     elements.searchResList.innerHTML = '';
+    elements.searchResPages.innerHTML = '';
 };
 
 
@@ -45,9 +46,46 @@ const renderRecipe = recipe => {
 </li>
 `;
 elements.searchResList.insertAdjacentHTML('beforeend', markup);
+};
+
+const createButton = (page, type) => `
+    <button class="btn-inline results__btn--${type}" data-goto=${type === 'prev' ? page - 1 : page + 1}>
+    <span>Page ${type === 'prev' ? page - 1 : page + 1}</span>
+        <svg class="search__icon">
+            <use href="img/icons.svg#icon-triangle-${type === 'prev' ? 'left' : 'right'}"></use>            
+        </svg>
+    </button>
+`;
+
+const renderButtons = (page, numResults, resPerPage) => {
+    //  Usamos Math.ceil para rendondear hacia arriba en el caso de que la division de recetas en paginas de un decimal.
+    const pages = Math.ceil(numResults/resPerPage);
+
+    let button;
+    if (page === 1) {
+        // Botón para ir a la próxima página.
+        button = createButton(page, 'next');
+    } else if (page < pages) {
+        // Ambos botones 
+        button = `
+            ${createButton(page, 'prev')}
+            ${createButton(page, 'next')}
+        `
+    } else if (page === pages && pages > 1) {
+        // Solo página anterior
+        button = createButton(page, 'prev');
+    }
+
+    elements.searchResPages.insertAdjacentHTML('afterbegin', button);
 }
 
 // Recorremos cada receta una por una
-export const renderResults = recipes => {
-    recipes.forEach(renderRecipe);
+export const renderResults = (recipes, page = 1, resPerPage = 10) => {
+    // Renderizamos los resultados de la página correspondiente.
+    const start = (page - 1) * resPerPage;
+    const end = page * resPerPage;
+
+    recipes.slice(start, end).forEach(renderRecipe);
+    // Renderizamos los botones para pasar o volver de página.
+    renderButtons(page, recipes.length, resPerPage);
 };

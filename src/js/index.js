@@ -31,3 +31,13 @@ elements.searchForm.addEventListener('submit', e => {
     e.preventDefault() //Prevenimos acciones nativas. En este caso no queremos que se recargue la pagina al darle submit.
     controlSearch();
 });
+
+elements.searchResPages.addEventListener('click', e => {
+    const btn = e.target.closest('.btn-inline');
+    if (btn) {
+        const goToPage = parseInt(btn.dataset.goto, 10);
+        searchView.clearResults();
+        searchView.renderResults(state.search.result, goToPage);        
+        console.log(goToPage);
+    }
+})
