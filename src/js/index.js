@@ -11,6 +11,7 @@ const controlSearch = async () => {
     // 1) Get query from view
     const query = searchView.getInput();
 
+
     if (query) {
     
         // 2) New search object and add to state
@@ -41,6 +42,12 @@ elements.searchForm.addEventListener('submit', e => {
     controlSearch();
 });
 
+// Testing
+window.addEventListener('load', e => {
+    e.preventDefault() //Prevenimos acciones nativas. En este caso no queremos que se recargue la pagina al darle submit.
+    controlSearch();
+});
+
 elements.searchResPages.addEventListener('click', e => {
     const btn = e.target.closest('.btn-inline');
     if (btn) {
@@ -64,8 +71,9 @@ const controlRecipe = async () => {
         state.recipe = new Recipe(id);
        
         try {
-            // Obtenemos la data del new Recipe
-            await state.recipe.getRecipe()
+            // Obtenemos la data del new Recipe y pareseamos los ingredientes.
+            await state.recipe.getRecipe();
+            state.recipe.parseIngredients();
            
             // Calculamos las porciones y el tiempo
             state.recipe.calcTime();
