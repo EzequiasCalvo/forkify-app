@@ -1,9 +1,12 @@
 import Search from './models/Search';
+import Recipe from './models/Recipe';
 import * as searchView from './views/searchView';
 import {elements, renderLoader, clearLoader} from './views/base';
 
 // Creamos nuestro objeto state. Para almacenar nuestra data y sus cambios.
 const state = {};
+
+// Search controller
 const controlSearch = async () => {
     // 1) Get query from view
     const query = searchView.getInput();
@@ -12,6 +15,7 @@ const controlSearch = async () => {
     
         // 2) New search object and add to state
         state.search = new Search(query);
+        console.log(state)
     
         // 3) Prepare UI for results
         searchView.clearInput();
@@ -40,4 +44,9 @@ elements.searchResPages.addEventListener('click', e => {
         searchView.renderResults(state.search.result, goToPage);        
         console.log(goToPage);
     }
-})
+});
+
+// Recipe controller
+const r = new Recipe(46956);
+r.getRecipe();
+console.log(r);
