@@ -17,11 +17,11 @@ export const highlightSelected = id => {
         el.classList.remove('results__link--active');
     });
 
-    document.querySelector(`a[href="#${id}"]`).classList.add('results__link--active');
+    document.querySelector(`.results__link[href="#${id}"]`).classList.add('results__link--active');
 }
 
 
-const limitRecipeTitle = (title, limit = 17) => { //valor por default de limit = 17
+export const limitRecipeTitle = (title, limit = 17) => { //valor por default de limit = 17
     const newTitle = []; 
     if (title.length > limit) {
         // Convertimos un array de palabras(split) y reducimos las palabras una vez que superan los 17 caracteres.
