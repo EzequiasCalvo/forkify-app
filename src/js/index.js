@@ -10,7 +10,6 @@ import {elements, renderLoader, clearLoader} from './views/base';
 
 // Creamos nuestro objeto state. Para almacenar nuestra data y sus cambios.
 const state = {};
-window.state = state;
 
 // Search controller
 const controlSearch = async () => {
@@ -65,7 +64,6 @@ elements.searchResPages.addEventListener('click', e => {
 const controlRecipe = async () => {
     // Obtenemos el id desde la URL
     const id = window.location.hash.replace('#', '');
-    console.log(id);
 
     if (id) {
         // Preparamos UI para los cambios
