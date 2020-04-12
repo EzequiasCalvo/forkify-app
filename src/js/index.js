@@ -17,7 +17,6 @@ const controlSearch = async () => {
     // 1) Get query from view
     const query = searchView.getInput();
 
-
     if (query) {
     
         // 2) New search object and add to state
@@ -134,9 +133,6 @@ elements.shopping.addEventListener('click', e => {
         state.list.updateCount(id, val);
     }
 });
-// TESTING
-state.likes = new Likes();
-likesView.toggleLikeMenu(state.likes.getNumLikes());
 
 // Like controller
 const controlLike = () => {
@@ -172,6 +168,19 @@ const controlLike = () => {
     likesView.toggleLikeMenu(state.likes.getNumLikes());
 };
 
+// Restore liked recipes on page loa
+window.addEventListener('load', () => {
+    state.likes = new Likes();
+    
+    // Restore likes
+    state.likes.readStorage();
+
+    // Toggle like menu button
+    likesView.toggleLikeMenu(state.likes.getNumLikes());
+
+    // Render the existing likes
+    state.likes.likes.forEach(like => likesView.renderLike(like));
+});
 
 
 // Handling recipe button clicks
