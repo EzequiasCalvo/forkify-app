@@ -77,7 +77,7 @@ function Veggie() {
         <h3>Veggie Picks</h3>
         <Splide
           options={{
-            perPage: 4,
+            perPage: 3,
             pagination: false,
             drag: "free",
             gap: "2rem",
