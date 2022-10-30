@@ -6,8 +6,8 @@ import React from "react";
 const Home = () => {
   return (
     <div>
-      <Veggie />
       <Popular />
+      <Veggie />
     </div>
   );
 };
