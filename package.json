@@ -17,7 +17,7 @@
     "html-webpack-plugin": "^4.0.4",
     "webpack": "^4.42.1",
     "webpack-cli": "^2.0.12",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.11.3"
   },
   "dependencies": {
     "axios": "^0.19.2",
