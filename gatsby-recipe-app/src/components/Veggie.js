@@ -4,6 +4,7 @@ import "@splidejs/splide/dist/css/splide.min.css"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { Wrapper, Card, Gradient } from "../styles/common"
+import slugify from "slugify"
 
 const query = graphql`
   {
@@ -37,10 +38,11 @@ function Veggie() {
           }}
         >
           {nodes.map(({ title, id, image }) => {
+            const slug = slugify(title, { lower: true })
             return (
               <SplideSlide key={id}>
                 <Card>
-                  <Link to={`/${title}`}>
+                  <Link to={`/${slug}`}>
                     <p>{title}</p>
                     <GatsbyImage image={image.gatsbyImageData} alt={title} />
                     <Gradient />

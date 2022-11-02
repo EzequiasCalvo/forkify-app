@@ -1,11 +1,11 @@
 import React, { useState } from "react"
 import Layout from "../components/Layout"
+import Seo from "../components/Seo"
 import { DetailWrapper, Button, Info } from "../styles/recipe"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { graphql } from "gatsby"
 
-function RecipeTemplate(props) {
-  console.log(props, "props")
+function RecipeTemplate({ data }) {
   const [activeTab, setActiveTab] = useState("Instructions")
   const {
     title,
@@ -13,12 +13,13 @@ function RecipeTemplate(props) {
     summary: { summary },
     image,
     content: { extendedIngredients },
-  } = props.data.contentfulRecipe
+  } = data.contentfulRecipe
 
   const pathToImage = getImage(image)
 
   return (
     <Layout>
+      <Seo title="Recipe" />
       <DetailWrapper>
         <div>
           <h2>{title}</h2>

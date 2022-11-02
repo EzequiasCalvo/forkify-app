@@ -14,24 +14,28 @@ module.exports = {
     title: "Gatsby recipe app",
     description: "Simple and cheap recipes site",
     author: "Ezequias",
-    person: { name: "Ezequias", age: 28 },
-    simpleData: ["item 1", "item 2"],
-    complexData: [
-      { name: "Ezequias", age: 28 },
-      { name: "Tobias", age: 32 },
-    ],
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: "Montserrat",
+              variants: ["400", "500"],
+            },
+            {
+              family: "Open Sans Condensed",
+              variants: ["300", "700"],
+            },
+          ],
+        },
+      },
+    },
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/assets/images`,
-      },
-    },
     {
       resolve: `gatsby-source-contentful`,
       options: {
@@ -44,5 +48,6 @@ module.exports = {
       resolve: `gatsby-plugin-styled-components`,
       options: {},
     },
+    `gatsby-plugin-react-helmet`,
   ],
 }
