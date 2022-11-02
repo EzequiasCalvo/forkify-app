@@ -1,13 +1,13 @@
 # forkify-app 🥗
-There are three recipe applications in this repository. The first one is in the root (legacy), under the moder-recipe-app folder there is a react version and under the gatsby-recipe-app folder there is a gatsby version.
+There are three simple recipe applications in this repository. The first one is in the root (legacy), under the moder-recipe-app folder there is a react version and under the gatsby-recipe-app folder there is a gatsby version.
 
 ## How to try it
 
 Both projects, react and gatsby versions are deployed with netlify:
 
-[Create react app version](https://ezequias-calculator.netlify.app/)
+[Create react app version](https://ezequias-cra-tasty.netlify.app/)
 
-[Create react app version](https://ezequias-calculator.netlify.app/)
+[Gatsby version](https://ezequias-gatsby-tasty.netlify.app/)
 
 
 
@@ -19,10 +19,10 @@ Both projects, react and gatsby versions are deployed with netlify:
 
 #### Lighthouse reports
 
-#####CRA stats
+- CRA stats
 <img width="1435" alt="Captura de Pantalla 2022-11-02 a la(s) 10 06 25" src="https://user-images.githubusercontent.com/57358923/199453533-a7886c8c-1ec0-4d16-ae41-d8e29af6b55b.png">
 
-#####Gatsby stats 🚀
+- Gatsby stats 🚀
 <img width="1440" alt="Captura de Pantalla 2022-11-02 a la(s) 10 28 25" src="https://user-images.githubusercontent.com/57358923/199453854-1bed241f-f4a4-46a0-b438-fa1346761139.png">
 
 
