@@ -11,7 +11,7 @@ Both projects, react and gatsby versions are deployed with netlify:
 
 
 #### Preview
-![tasty](https://user-images.githubusercontent.com/57358923/199456329-250f8f53-36b7-4d1c-a034-46e7263e2d76.gif)
+![tasty-app](https://user-images.githubusercontent.com/57358923/199456640-d0daafd3-9372-47db-8c1a-a261e46319a3.gif)
 
 
 
