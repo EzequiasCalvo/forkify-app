@@ -17,10 +17,10 @@ Both projects, react and gatsby versions are deployed with netlify:
 
 #### Lighthouse reports
 
-- CRA stats
+- Gatsby stats 🚀
 <img width="1435" alt="Captura de Pantalla 2022-11-02 a la(s) 10 06 25" src="https://user-images.githubusercontent.com/57358923/199453533-a7886c8c-1ec0-4d16-ae41-d8e29af6b55b.png">
 
-- Gatsby stats 🚀
+- CRA stats
 <img width="1440" alt="Captura de Pantalla 2022-11-02 a la(s) 10 28 25" src="https://user-images.githubusercontent.com/57358923/199453854-1bed241f-f4a4-46a0-b438-fa1346761139.png">
 
 
