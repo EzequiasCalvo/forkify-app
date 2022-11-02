@@ -10,11 +10,9 @@ Both projects, react and gatsby versions are deployed with netlify:
 [Gatsby version](https://ezequias-gatsby-tasty.netlify.app/)
 
 
-
-### Reports
-
 #### Preview
-![learning_tip](https://user-images.githubusercontent.com/96049132/187091016-91ff8eab-18a7-4a7a-bff3-740731c4ef5e.gif)
+![tasty](https://user-images.githubusercontent.com/57358923/199456329-250f8f53-36b7-4d1c-a034-46e7263e2d76.gif)
+
 
 
 #### Lighthouse reports
